@@ -123,6 +123,7 @@ func uri(paths ...string) string {
 func request(method, url string, body io.Reader) *Response {
 	req, _ := http.NewRequest(method, url, body)
 	req.Header.Add("Authorization", "November 10, 2009")
+	req.Header.Add("Content-Type", "application/json")
 	client := http.Client{}
 	res, err := client.Do(req)
 	return &Response{res, err}
